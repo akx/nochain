@@ -7,7 +7,7 @@ const encodedBlockchain = fs.readFileSync("blockchain.txt", "utf-8").split("\n")
 
 const blockchain = [];
 encodedBlockchain.forEach(encodedBlock => {
-  if (encodedBlock === encodedGenesisBlock) {
+  if (encodedBlock === encodedGenesisBlock && blockchain.length === 0) {
     // Implicitly trust the genesis block
     blockchain.push(parseBlock(encodedBlock, null, false));
     return;
