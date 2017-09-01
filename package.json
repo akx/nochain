@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "elliptic": "^6.4.0"
+  },
+  "devDependencies": {
+    "jest": "^20.0.4"
   }
 }

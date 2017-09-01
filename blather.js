@@ -1,4 +1,4 @@
-function blather(minN = 30, maxN = 50, vowels = "aeiou", consonants = "pbn") {
+function blather(minN = 30, maxN = 50, vowels = "aeiou", consonants = "pbn", separators = [". ", "! ", "? ", " ", " "]) {
   let s = "";
   const n = Math.floor(minN + Math.random() * (maxN - minN));
   while (s.length < n) {
@@ -8,10 +8,7 @@ function blather(minN = 30, maxN = 50, vowels = "aeiou", consonants = "pbn") {
     s += vowel;
     if (Math.random() < 0.3) s += vowel;
     if (Math.random() < 0.3) {
-      if (Math.random() < 0.3) {
-        s += "!";
-      }
-      s += " ";
+      s += separators[Math.floor(Math.random() * separators.length)];
     }
   }
   return s.trim();
